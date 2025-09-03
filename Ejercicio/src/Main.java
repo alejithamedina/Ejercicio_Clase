@@ -44,64 +44,62 @@ public class Main {
                     int Candidato = sc.nextInt();
 
                     switch (Candidato) {
-                             case 1:
-                                Voto_1++;
+                        case 1:
+                            Voto_1++;
 
-                                System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
-                                System.out.print("Medio: ");
-                                int medio = sc.nextInt();
+                            System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
+                            System.out.print("Medio: ");
+                            int medio = sc.nextInt();
 
-                                if (medio == 1) {
+                            if (medio == 1) {
                                 AI++;
-                                Costo1+= Costo_Internet;
+                                Costo1 += Costo_Internet;
 
-                                }else if(medio == 2) {
-                                    AR++;
-                                    Costo2+= Costo_Radio;
+                            } else if (medio == 2) {
+                                AR++;
+                                Costo2 += Costo_Radio;
 
-                                }else if(medio == 3) {
-                                    AT++;
-                                    Costo3+= Costo_Tv;
+                            } else if (medio == 3) {
+                                AT++;
+                                Costo3 += Costo_Tv;
                             }
-                                case 2:
-                                    Voto_2++;
-                                    System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
-                                    System.out.print("Medio: ");
-                                    int medio = sc.nextInt();
+                        case 2:
+                            Voto_2++;
+                            System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
+                            System.out.print("Medio: ");
+                            int medio = sc.nextInt();
 
-                                    }if (medio == 1) {
-                                    BI++;
-                                    Costo1+= Costo_Internet;
+                    }
+                    if (medio == 1) {
+                        BI++;
+                        Costo1 += Costo_Internet;
 
-                                    }else if(medio == 2) {
-                                        BR++;
-                                        Costo2+= Costo_Radio;
+                    } else if (medio == 2) {
+                        BR++;
+                        Costo2 += Costo_Radio;
 
-                                    }else if(medio == 3) {
-                                        BT++;
-                                        Costo3+= Costo_Tv;
-                                    }
+                    } else if (medio == 3) {
+                        BT++;
+                        Costo3 += Costo_Tv;
+                    }
 
+                case 3:
+                    Voto_3++;
+                    System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
+                    System.out.print("Medio: ");
+                    int medio = sc.nextInt();
 
-                                        case 3:
-                                        Voto_3++;
-                                        System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
-                                        System.out.print("Medio: ");
-                                        int medio = sc.nextInt();
+                    if (medio == 1) {
+                        CI++;
+                        Costo1 += Costo_Internet;
 
-                                        if (medio == 1) {
-                                            CI++;
-                                            Costo1+= Costo_Internet;
+                    } else if (medio == 2) {
+                        CR++;
+                        Costo2 += Costo_Radio;
 
-                                        }else if(medio == 2) {
-                                            CR++;
-                                            Costo2+= Costo_Radio;
-
-                                        }else if(medio == 3) {
-                                            CT++;
-                                            Costo3+= Costo_Tv;
-                                        }
-
+                    } else if (medio == 3) {
+                        CT++;
+                        Costo3 += Costo_Tv;
 
 
                         total++;
@@ -112,7 +110,7 @@ public class Main {
                     break;
 
 
-                case 2:
+                case 4:
                     System.out.println("Por favor ingrese el numero del candidato: 1)A  2)B  3) C");
                     System.out.print("Número candidato: ");
 
@@ -131,34 +129,13 @@ public class Main {
                     }
                     break;
 
-
-                case 3:
-
-                    break;
-
-                case 4:
-
-                    break;
-
                 case 5:
-
-                    break;
-
-                case 6:
-
-                    break;
-
-                case 7:
-
-                    break;
-
-                case 8:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción no válida");
 
-                }
             }
+            }while(opcion!=7);
         }
     }
