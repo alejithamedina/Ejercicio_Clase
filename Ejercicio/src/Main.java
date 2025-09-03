@@ -83,7 +83,6 @@ public class Main {
                         Costo3 += Costo_Tv;
                     }
 
-
                 case 3:
                     Voto_3++;
                     System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
