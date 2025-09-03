@@ -85,10 +85,10 @@ public class Main {
                         Costo2 += Costo_Tv;
                     }
                     break;
-            }
-            total++;
-            System.out.println("Voto registrado.");
-            break;
+
+                    total++;
+                    System.out.println("Voto registrado.");
+                    break;
 
             case 3:
                 Voto_3++;
@@ -107,15 +107,13 @@ public class Main {
                 } else if (medio2 == 3) {
                     CT++;
                     Costo3 += Costo_Tv;
-                }
+
                 break;
             total++;
             System.out.println("Voto registrado.");
             break;
         }
-
-
-                        case 4:
+                        case 2:
                             System.out.println("Por favor ingrese el numero del candidato: 1)Andres  2)Blanca  3)Carlos");
                             System.out.print("candidato: ");
 
@@ -134,15 +132,69 @@ public class Main {
                             }
                             break;
 
-                        case 5:
-                            System.out.println("Saliendo...");
+                        case 3:
+                            Voto_1 = Voto_2 = Voto_3 = 0;
+                            AI = AR = AT = 0;
+                            BI = BR = BT = 0;
+                            CI = CR = CT = 0;
+                            Costo1 = Costo2 = Costo3 = 0;
+                            total = 0;
+                            System.out.println("Urnas y costos reiniciados.");
                             break;
-                        default:
-                            System.out.println("Opción no válida");
+                        case 4:
+                            System.out.println("Total de votos: " + total);
+                            System.out.println("Andres: " + Voto_1 + "  Blanca: " + Voto_2 + "  Carlos: " + Voto_3);
+                            break;
 
-                       }
+                         case 5:
+                             if (total == 0) {
+                                 System.out.println("Aún no hay votos.");
+                             } else {
+                                 double pA = (Voto_1 * 100.0) / total;
+                                 double pB = (Voto_2 * 100.0) / total;
+                                 double pC = (Voto_3 * 100.0) / total;
+                                 System.out.printf("Porcentajes -> Andres: %.2f%%, Blanca: %.2f%%, Carlos: %.2f%%%n", pA, pB, pC);
+                             }
+                             break;
+                             case 6:
+                            int costoTotal = Costo1 + Costo2 + Costo3;
+                            if (total == 0) {
+                                System.out.println("No hay votos para calcular promedios.");
+                            } else {
+                                double costoPromedioPorVoto = costoTotal / (double) total;
+                                System.out.println("Costo total campañas: $" + costoTotal);
+                                System.out.printf("Costo promedio por voto: $%.2f%n", costoPromedioPorVoto);
+                            }
+                            break;
+
+                case 7:
+                    if (total == 0) {
+                        System.out.println("Aún no hay votos.");
+                    } else {
+                        int max = Math.max(Voto_1, Math.max(Voto_2, Voto_3));
+                        boolean a = Voto_1 == max;
+                        boolean b = Voto_2 == max;
+                        boolean c = Voto_3 == max;
+                        if ((a ? 1 : 0) + (b ? 1 : 0) + (c ? 1 : 0) > 1) {
+                            System.out.println("Empate entre: " + (a ? "Andres " : "") + (b ? "Blanca " : "") + (c ? "Carlos " : ""));
+                        } else {
+                            String ganador = a ? "Andres" : b ? "Blanca" : "Carlos";
+                            System.out.println("Ganador: " + ganador);
+                        }
+                    }
+                    break;
+                    case 8:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opción no válida");
             }
-        }             while (opcion != 7) ;
+        } while (opcion != 8);
+
+        sc.close();
     }
+}
+
 
 
