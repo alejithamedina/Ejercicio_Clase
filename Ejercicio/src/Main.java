@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-    private static final int I = ;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,7 +21,7 @@ public class Main {
         int Costo1 = 0;
         int Costo2 = 0;
         int Costo3 = 0;
-        int total = 0;
+        int total =  0;
         int opcion = 0;
 
         do {
@@ -38,7 +37,6 @@ public class Main {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-
                     System.out.println("Por favor ingrese el numero del candidato: 1)Andres  2)Blanca  3)Carlos");
                     System.out.print("candidato: ");
                     int Candidato = sc.nextInt();
@@ -46,7 +44,6 @@ public class Main {
                     switch (Candidato) {
                         case 1:
                             Voto_1++;
-
                             System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
                             System.out.print("Medio: ");
                             int medio = sc.nextInt();
@@ -57,85 +54,95 @@ public class Main {
 
                             } else if (medio == 2) {
                                 AR++;
-                                Costo2 += Costo_Radio;
+                                Costo1 += Costo_Radio;
 
                             } else if (medio == 3) {
                                 AT++;
-                                Costo3 += Costo_Tv;
+                                Costo1 += Costo_Tv;
                             }
-                        case 2:
-                            Voto_2++;
-                            System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
-                            System.out.print("Medio: ");
-                            int medio = sc.nextInt();
-
+                            break;
                     }
-                    if (medio == 1) {
-                        BI++;
-                        Costo1 += Costo_Internet;
+                    total++;
+                    System.out.println("Voto registrado.");
+                    break;
 
-                    } else if (medio == 2) {
+                case 2:
+                    Voto_2++;
+                    System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
+                    System.out.print("Medio: ");
+                    int medio1 = sc.nextInt();
+
+                    if (medio1 == 1) {
+                        BI++;
+                        Costo2 += Costo_Internet;
+
+                    } else if (medio1 == 2) {
                         BR++;
                         Costo2 += Costo_Radio;
 
-                    } else if (medio == 3) {
+                    } else if (medio1 == 3) {
                         BT++;
-                        Costo3 += Costo_Tv;
-                    }
-
-                case 3:
-                    Voto_3++;
-                    System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
-                    System.out.print("Medio: ");
-                    int medio = sc.nextInt();
-
-                    if (medio == 1) {
-                        CI++;
-                        Costo1 += Costo_Internet;
-
-                    } else if (medio == 2) {
-                        CR++;
-                        Costo2 += Costo_Radio;
-
-                    } else if (medio == 3) {
-                        CT++;
-                        Costo3 += Costo_Tv;
-
-
-                        total++;
-                        System.out.println("Voto registrado.");
-                    } else {
-                        System.out.println("Datos inválidos.");
+                        Costo2 += Costo_Tv;
                     }
                     break;
-
-
-                case 4:
-                    System.out.println("Por favor ingrese el numero del candidato: 1)A  2)B  3) C");
-                    System.out.print("Número candidato: ");
-
-
-                    if (sel == 1) {
-                        System.out.println("Candidato A  I=" + AI + " ($" + (AI * Costo_Internet) + "), R=" + AR + " ($" + (AR * Costo_Radio) + "), T=" + AT + " ($" + (AT * Costo_Tv) + ")");
-                        System.out.println("Costo total A: $" + Costo1);
-                    } else if (sel == 2) {
-                        System.out.println("Candidato B  I=" + BI + " ($" + (BI * Costo_Internet) + "), R=" + BR + " ($" + (BR * Costo_Radio) + "), T=" + BT + " ($" + (BT * Costo_Tv) + ")");
-                        System.out.println("Costo total B: $" + Costo2);
-                    } else if (sel == 3) {
-                        System.out.println("Candidato C  I=" + CI + " ($" + (CI * Costo_Internet) + "), R=" + CR + " ($" + (CR * Costo_Radio) + "), T=" + CT + " ($" + (CT * Costo_Tv) + ")");
-                        System.out.println("Costo total C: $" + Costo3);
-                    } else {
-                        System.out.println("Candidato inválido.");
-                    }
-                    break;
-
-                case 5:
-                    System.out.println("Saliendo...");
-                    break;
-                default:
-                    System.out.println("Opción no válida");
-
             }
-            }while(opcion!=7);
+            total++;
+            System.out.println("Voto registrado.");
+            break;
+
+            case 3:
+                Voto_3++;
+                System.out.println("Por favor ingrese el medio : Internet=I, Radio=R, Televisión=T: ");
+                System.out.print("Medio: ");
+                int medio2 = sc.nextInt();
+
+                if (medio2 == 1) {
+                    CI++;
+                    Costo3 += Costo_Internet;
+
+                } else if (medio2 == 2) {
+                    CR++;
+                    Costo3 += Costo_Radio;
+
+                } else if (medio2 == 3) {
+                    CT++;
+                    Costo3 += Costo_Tv;
+                }
+                break;
+            total++;
+            System.out.println("Voto registrado.");
+            break;
         }
+
+
+                        case 4:
+                            System.out.println("Por favor ingrese el numero del candidato: 1)Andres  2)Blanca  3)Carlos");
+                            System.out.print("candidato: ");
+
+
+                            if (sel == 1) {
+                                System.out.println("1  I=" + AI + " ($" + (AI * Costo_Internet) + "), R=" + AR + " ($" + (AR * Costo_Radio) + "), T=" + AT + " ($" + (AT * Costo_Tv) + ")");
+                                System.out.println("Costo total A: $" + Costo1);
+                            } else if (sel == 2) {
+                                System.out.println("2  I=" + BI + " ($" + (BI * Costo_Internet) + "), R=" + BR + " ($" + (BR * Costo_Radio) + "), T=" + BT + " ($" + (BT * Costo_Tv) + ")");
+                                System.out.println("Costo total B: $" + Costo2);
+                            } else if (sel == 3) {
+                                System.out.println("3  I=" + CI + " ($" + (CI * Costo_Internet) + "), R=" + CR + " ($" + (CR * Costo_Radio) + "), T=" + CT + " ($" + (CT * Costo_Tv) + ")");
+                                System.out.println("Costo total C: $" + Costo3);
+                            } else {
+                                System.out.println("Candidato inválido.");
+                            }
+                            break;
+
+                        case 5:
+                            System.out.println("Saliendo...");
+                            break;
+                        default:
+                            System.out.println("Opción no válida");
+
+                       }
+            }
+        }             while (opcion != 7) ;
     }
+
+
